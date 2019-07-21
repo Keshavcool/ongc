@@ -42,7 +42,7 @@ router.post('/signup',(req,res,next) => {
                 query = `INSERT INTO members(name,email,password,isAdmin) VALUES('${name}','${email}','${password}','${isAdmin}')`;
                 
 
-                conn.query(query,req.body,(err) => {
+                conn.query(query,req.body,(err,results) => {
                     let response;
                     if(err){
 
@@ -54,7 +54,8 @@ router.post('/signup',(req,res,next) => {
                     }
                     else{
                         sess = req.session;
-                        sess.secret = email;
+                        sess.email = email;
+                        sess.id = results.insertId;
                         response = {
                             success : true
                         };
@@ -106,8 +107,9 @@ router.post('/login',(req,res,next) => {
 
 //3.API for logout
 
-router.get('/logout',(req,res,next) => {
-    delete req.session.email
+router.post('/logout',(req,res,next) => {
+    delete req.session.email;
+    delete req.session.id;
     res.send({
         success : true
     });

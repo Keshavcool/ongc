@@ -20,7 +20,11 @@ const storage = multer.diskStorage({
         cb(null,'./marksheets/');
     },
     filename  : (req,file,cb) => {
-        cb(null,file.fieldname + '-' + Date.now());
+        const idx = file.originalname.lastIndexOf('.')+1;
+        const extension = file.originalname.substring(idx);
+        const filename = file.fieldname + '-' + Date.now()+'.'+extension;
+        file.filename = filename;
+        cb(null,filename);
     }
 });
 
@@ -35,7 +39,7 @@ app.use(session({
 
 
 app.use('/auth',authRoute);
-app.use('/user',userRoute);
+app.use('/user',upload.single('file'),userRoute);
 app.use('/admin',adminRoute);
 
 
