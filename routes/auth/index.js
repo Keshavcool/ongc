@@ -54,7 +54,7 @@ router.post('/signup',(req,res,next) => {
                     }
                     else{
                         req.session.email = email;
-                        sess.id = results.insertId;
+                        req.session.idx = results.insertId;
                         response = {
                             success : true
                         };
@@ -73,7 +73,7 @@ router.post('/signup',(req,res,next) => {
 router.post('/login',(req,res,next) => {
 
     const { email , password } = req.body;
-    const query = `select id from members where email = '${email}' and password = '${password}'`;
+    const query = `select id,isAdmin from members where email = '${email}' and password = '${password}'`;
 
     conn.query(query,(err,results) => {
         if(err){
@@ -92,8 +92,10 @@ router.post('/login',(req,res,next) => {
             }
             else{
                 req.session.email = email;
+                req.session.idx = results[0].id;
                 res.send({
-                    success : true
+                    success : true,
+                    isAdmin : results[0].isAdmin
                 });
                 res.end();
             }
@@ -107,7 +109,7 @@ router.post('/login',(req,res,next) => {
 
 router.post('/logout',(req,res,next) => {
     delete req.session.email;
-    delete req.session.id;
+    delete req.session.idx;
     res.send({
         success : true
     });

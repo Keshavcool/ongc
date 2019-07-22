@@ -47,8 +47,6 @@ app.use('/admin',adminRoute);
 
 
 
-
-
 //starting the server
 const port = process.env.PORT || 3000;
 app.listen(3000,() => {

@@ -6,8 +6,8 @@ const userChecker = require('../../middlewares/user');
 
 
 //using the authChecker and the userChecker
-router.use(authChecker);
-router.use(userChecker);
+//router.use(authChecker);
+//router.use(userChecker);
 
 //1.API for getting the basic info of the user
 router.post('/',(req,res) => {
@@ -34,7 +34,7 @@ router.post('/',(req,res) => {
 //2.API for handling the form data submitted by the user
 router.post('/data',(req,res) => {
 
-    const ref_id = req.session.id;
+    const ref_id = req.session.idx;
     const {dob,gender,category,address,mobile,fathers_name,occupation} = req.body;
 
     let query = `insert into personal_info(members_id,dob,gender,category,address,mobile,fathers_name,occupation) values('${ref_id}','${dob}','${gender}','${category}','${address}','${mobile}','${fathers_name}','${occupation}')`;
@@ -87,6 +87,7 @@ router.post('/data',(req,res) => {
     });
 
 });
+
 
 
 

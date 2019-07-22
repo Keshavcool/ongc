@@ -63,9 +63,9 @@
                 },
                 success: function (data) {
                     if (data.message === undefined) {
-                        console.log('login');
+                        console.log(data);
                         //redirect
-                        window.location.href = "dbuser.html";
+                        //window.location.href = "dbuser.html";
                     } else {
                         console.log(data.message);
 

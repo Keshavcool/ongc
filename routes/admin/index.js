@@ -33,7 +33,7 @@ router.post('/data',(req,res) => {
 
 router.post('/',(req,res) => {
 
-    const query = `select * from members where id <> ${1}`;
+    const query = `select * from members where id <> ${1} and status <> 2`;
     conn.query(query,(err,results) => {
 
         if(err){
