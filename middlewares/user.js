@@ -1,5 +1,5 @@
-const userChecker = (req,res,next) => {
 
+const userChecker = (req,res,next) => {
     if(req.session.email === undefined){
 
         res.send({

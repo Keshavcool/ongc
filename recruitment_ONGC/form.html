@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Recruitmnet</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+
+    <link href="css/form.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#" disabled style="font-size: 30px;">Dashboard-User</a>
+
+            <div class="collapse navbar-collapse" id="navbarText">
+
+            </div>
+
+            <a href="" class="btn btn-primary" style="font-size: 20px;">Log Out</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="section-header my-4">
+            <h2><u>Application form</u></h2>
+        </div>
+
+        <div class="form">
+            <form action="" method="post" role="form" class="contactForm">
+                <div class="form-row">
+
+                    <div class="form-group col-md-12">
+                        <input type="text" name="name" class="form-control" id="name"
+                            placeholder="Name (in capitals)" />
+
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <input type="date" class="form-control" name="dob" id="dob">
+                    </div>
+                    <div class=" form-group col-md-4 text-center">
+                        <span class="lead">Gender : </span>
+                        <input type="radio" name="gender" value="male"> Male
+                        <input type="radio" name="gender" value="female"> Female
+                        <input type="radio" name="gender" value="other"> Other
+                    </div>
+                    <div class=" form-group col-md-4 text-center">
+                        <span class="lead">Category : </span>
+                        <input type="radio" name="category" value="gen"> Gen
+                        <input type="radio" name="category" value="sc"> SC
+                        <input type="radio" name="category" value="st"> ST
+                        <input type="radio" name="category" value="obc"> OBC
+                        <input type="radio" name="category" value="other"> Other
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <textarea class="form-control" name="address" rows="5" placeholder="Address"></textarea>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group col-md-6">
+                        <input type="number" class="form-control" name="mobile" id="mobile" placeholder="Mobile No." />
+
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Email" />
+
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Father / Mother Name" />
+
+                </div>
+                <div class="form-group ">
+                    <input type="text" name="name" class="form-control" id="name"
+                        placeholder="Father / Mother Occupation" />
+
+                </div>
+
+                <p style="font-size: 2em">
+                    if employee of ONGC:
+                </p>
+
+                <div class="form-row">
+
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" name="designation" id="designation"
+                            placeholder="Designation" />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF" />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" name="section" id="section" placeholder="Section" />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" name="location" id="location" placeholder="Location" />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="number" class="form-control" name="phone" id="phone" placeholder="Phone No." />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="number" class="form-control" name="mobile" id="mobile" placeholder="Mobile No." />
+                    </div>
+
+                </div>
+
+                <p style="font-size: 2em">
+                    Academic Details:
+                </p>
+
+                <div class="form-group ">
+                    <input type="text" name="presentinstitute" class="form-control" id="presentinstitute"
+                        placeholder="Name of present institute" />
+                </div>
+                <div class="form-group ">
+                    <input type="text" name="presentcourse" class="form-control" id="presentcourse"
+                        placeholder="Name of present course" />
+                </div>
+                <div class="form-group ">
+                    <input type="text" name="semesteryear" class="form-control" id="semesteryear"
+                        placeholder="Present year" />
+                </div>
+                <div class="form-group ">
+                    Upload 10th/12th/college Mark Sheet <input type="file">
+                </div>
+                <div class="text-center my-4"><button type="submit" class="btn btn-success"
+                        style="font-size: 1.5em;">SUBMIT</button></div>
+            </form>
+        </div>
+
+    </div>
+
+
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                &copy; 2019 | All Rights Reserved
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

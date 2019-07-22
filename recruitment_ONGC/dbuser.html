@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Recruitmnet</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Main Stylesheet File -->
+
+    <link href="css/dashbord.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#" disabled style="font-size: 30px;">Dashboard-User</a>
+
+            <div class="collapse navbar-collapse" id="navbarText">
+
+            </div>
+
+            <a href="" id="btnlogout" class="btn btn-primary" style="font-size: 20px;">Log Out</a>
+        </div>
+    </nav>
+
+    <section class="wow fadeInUp ">
+        <div class="container" style="margin-top: 5%;">
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <h2>Welcome <span id="showname"> Name </span></h2>
+                </div>
+
+                <div class="col-md-6  text-center">
+                    <h2>Application Status: <span class="lead" id="show">abc</span></h2>
+                </div>
+            </div>
+
+            <div class="col-md-12 button" id="download">
+                <a href="img/sample.pdf">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Appyly For Internship
+                </a> </div>
+            <div class="col-md-12 button2" id="fill">
+                <a href="img/sample.pdf">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Download Letter
+                </a>
+            </div>
+
+    </section>
+
+    <script>
+        var content = ['Not Applied', 'Applied', 'Approved', 'Rejected'];
+        console.log(content);
+        $.ajax({
+            type: 'post',
+            url: 'http://localhost:3000/user/',
+            data: {
+                authsecretEmail: 'secret@gmail.com',
+                authsecretPassword: 'secret1234xxxx',
+            },
+            success: function (data) {
+                console.log(data);
+                //if false then redirect
+            },
+            error: function (data) {
+                console.log('hi');
+
+            }
+        });
+
+        $('#show').html(content[0]);
+        // $('#fill').fadeOut();
+        // $('#download').fadeOut();       
+
+        // $('#btnlogout').click(function () {
+        //     $.ajax({
+        //         url: "http://localhost:3000/auth/logout"
+        //     });
+        // });
+    </script>
+
+</body>
+
+</html>

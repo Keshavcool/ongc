@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>signup</title>
+
+    <!-- links -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- main links -->
+    <link rel="stylesheet" href="/css/login.css">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <h1 class="my-4">ONGC - Signup</h1>
+            </div>
+
+
+            <!-- Login Form -->
+            <form>
+                <input type="text" id="name" class="fadeIn second" name="name" placeholder="Name">
+                <input type="text" id="email" class="fadeIn second" name="login" placeholder="Email">
+                <input type="text" id="password" class="fadeIn third" name="login" placeholder="Password">
+                <input type="button" id="login" class="fadeIn fourth" value="Log In">
+            </form>
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Forgot Password?</a>
+            </div>
+
+        </div>
+    </div>
+    <!-- script -->
+
+    <script>
+        $("#login").click(function () {
+            $.ajax({
+                type: 'post',
+                url: 'http://localhost:3000/auth/signup',
+                data: {
+                    name: $("#name").val(),
+                    email: $("#email").val (),
+                    password: $("#password").val(),
+                    authsecretEmail: 'secret@gmail.com',
+                    authsecretPassword: 'secret1234xxxx',
+                },
+                success: function (data) {
+                    console.log(data);
+                    window.location.href = "dbuser.html";
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>

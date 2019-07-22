@@ -53,8 +53,7 @@ router.post('/signup',(req,res,next) => {
 
                     }
                     else{
-                        sess = req.session;
-                        sess.email = email;
+                        req.session.email = email;
                         sess.id = results.insertId;
                         response = {
                             success : true
@@ -92,8 +91,7 @@ router.post('/login',(req,res,next) => {
                 res.end();
             }
             else{
-                sess = req.session;
-                sess.email = email;
+                req.session.email = email;
                 res.send({
                     success : true
                 });
@@ -115,6 +113,5 @@ router.post('/logout',(req,res,next) => {
     });
     res.end();
 });
-
 
 module.exports = router;

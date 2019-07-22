@@ -1,0 +1,209 @@
+.navbar{
+    background: grey;
+    box-shadow: 0.1em 0.1em 1em rgba(0, 0, 0, 0.5);
+    padding: 1% 0;
+    
+}
+.button{
+    margin: 8% 0;
+}
+
+.button a{
+    font-family: sans-serif;
+    background-color: #1b015e;
+}
+
+.button a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    padding: 30px 60px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.button a::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.button a span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #0c002b, #1779ff);
+    animation: animatebtn1 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animatebtn1 {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.button a span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, #0c002b, #1779ff);
+    animation: animatebtn2 2s linear infinite;
+}
+
+@keyframes animatebtn2 {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.button a span:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to left, #0c002b, #1779ff);
+    animation: animatebtn3 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animatebtn3 {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.button a span:nth-child(4) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to top, #0c002b, #1779ff);
+    animation: animatebtn4 2s linear infinite;
+}
+
+@keyframes animatebtn4 {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+
+
+.button2{
+    margin: 12% 0;
+}
+
+.button2 a{
+    font-family: sans-serif;
+    background-color: #228B22;
+}
+
+.button2 a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 30px 60px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.button2 a::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.button2 a span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #228B22, rgb(64, 255, 64)	);
+    animation: animatebtn1 2s linear infinite;
+    animation-delay: 1s;
+}
+
+
+.button2 a span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom,  #228B22, rgb(64, 255, 64));
+    animation: animatebtn2 2s linear infinite;
+}
+
+
+.button2 a span:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to left, #228B22, rgb(64, 255, 64));
+    animation: animatebtn3 2s linear infinite;
+    animation-delay: 1s;
+}
+
+.button2 a span:nth-child(4) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to top,  #228B22, rgb(64, 255, 64));
+    animation: animatebtn4 2s linear infinite;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .button {
+        margin-top: 40%;
+    }
+    .button2 {
+        margin-top: 40%;
+    }
+}

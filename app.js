@@ -13,6 +13,7 @@ const session = require('express-session');
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded( { extended : true } ));
+app.use(express.static('recruitment_ONGC'));
 
 //File uploading code 
 const storage = multer.diskStorage({
@@ -34,8 +35,10 @@ const upload = multer({storage : storage});
 app.use(session({
     secret : process.env.SECRET,
     saveUninitialized : true,
-    resave : true
+    resave : false
 }));
+
+
 
 
 app.use('/auth',authRoute);
