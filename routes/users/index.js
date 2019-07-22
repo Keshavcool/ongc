@@ -6,8 +6,8 @@ const userChecker = require('../../middlewares/user');
 
 
 //using the authChecker and the userChecker
-//router.use(authChecker);
-//router.use(userChecker);
+router.use(authChecker);
+router.use(userChecker);
 
 //1.API for getting the basic info of the user
 router.post('/',(req,res) => {

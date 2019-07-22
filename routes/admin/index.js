@@ -10,9 +10,9 @@ router.use(authChecker);
 router.use(adminChecker);
 
 
-router.post('/data',(req,res) => {
+router.post('/data/:id',(req,res) => {
 
-    const ref_id = req.body.id;
+    const ref_id = req.params.id;
     const query = `select * from academics_info left join employee_info using(members_id) left join personal_info using(members_id)  where members_id = ${ref_id}`;
 
     conn.query(query,(err,results) => {
